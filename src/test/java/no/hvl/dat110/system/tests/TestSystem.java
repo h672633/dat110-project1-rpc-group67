@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+
 import no.hvl.dat110.system.controller.Controller;
 import no.hvl.dat110.system.display.DisplayDevice;
 import no.hvl.dat110.system.sensor.SensorDevice;

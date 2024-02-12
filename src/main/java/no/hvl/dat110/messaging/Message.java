@@ -9,17 +9,15 @@ public class Message {
 
 	// construction a Message with the data provided
 	public Message(byte[] data) {
-		
-		// TODO - START
-		
-		if (true)
+
+		if (data==null||data.length>=MessageUtils.SEGMENTSIZE) {
 			throw new UnsupportedOperationException(TODO.constructor("Message"));
-			
-		// TODO - END
+		}
+		this.data=data;
 	}
 
 	public byte[] getData() {
-		return this.data; 
+		return this.data;
 	}
 
 }

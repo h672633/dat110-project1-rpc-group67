@@ -49,31 +49,6 @@ public class RPCClient {
 		byte[] returnval = null;
 		byte[] encapsulated = null;
 
-
-		if (param != null) {
-			encapsulated = RPCUtils.encapsulate(rpcid, param);
-		} else {
-			return null;
-		}
-
-
-		boolean sjekk = false;
-
-		while (sjekk != true) {
-
-			Message requestMessage = new Message(encapsulated);
-			connection.send(requestMessage);
-
-			Message receivedMessage = connection.receive();
-
-			if (receivedMessage != null) {
-			returnval = RPCUtils.decapsulate(receivedMessage.getData());
-			}
-
-			sjekk = true;
-
-		}
-
 		encapsulated = RPCUtils.encapsulate(rpcid, param);
 		Message rpcmsg = new Message(encapsulated);
 		connection.send(rpcmsg);
